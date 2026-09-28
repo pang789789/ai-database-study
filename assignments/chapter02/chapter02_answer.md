@@ -471,7 +471,7 @@ enrollments가 학생과 강의의 관계를 나타낸다.
 assignments/chapter02/images/step07_ai_review.png
 ```
 
-`![STEP 7 AI 활용 증거 화면](./images/step07_ai_review.png)`
+![STEP 7 AI 활용 증거 화면](./images/step07_ai_review.png)
 
 ---
 
