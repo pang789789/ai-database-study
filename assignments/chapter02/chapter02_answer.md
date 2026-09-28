@@ -264,7 +264,7 @@ DESC 결과의 첫 학생: 이준호
 assignments/chapter02/images/step04_result_set.png
 ```
 
-`![STEP 4 결과 집합 확인](./images/step04_result_set.png)`
+![STEP 4 결과 집합 확인](./images/step04_result_set.png)
 
 ---
 
@@ -342,7 +342,7 @@ assignments/chapter02/images/step05_pk_fk.png
 
 > 오류 메시지는 전체 화면이 아니라 테이블명·constraint·참조 오류가 보이는 정도만 캡처합니다.
 
-`![STEP 5 PK와 FK 확인](./images/step05_pk_fk.png)`
+![STEP 5 PK와 FK 확인](./images/step05_pk_fk.png)
 
 ---
 
