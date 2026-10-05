@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1450" height="650" viewBox="0 0 1450 650" role="img" aria-labelledby="title desc">
+<title id="title">도서 대여 데이터 모델</title><desc id="desc">members와 books가 loans와 각각 1 대 다 관계를 가집니다.</desc>
+<defs><style>
+text{font-family:'Segoe UI','Malgun Gothic',Arial,sans-serif;fill:#17253a}.title{font-size:32px;font-weight:700}.sub{font-size:17px;fill:#53647a}.head{font-size:21px;font-weight:700;fill:#fff}.field{font-size:17px}.tag{font-size:13px;font-weight:700;fill:#31527c}.line{stroke:#557391;stroke-width:3;fill:none}.label{font-size:16px;font-weight:700;fill:#31527c}.note{font-size:15px;fill:#4d5d70}
+</style></defs>
+<rect width="1450" height="650" fill="#f5f8fc"/>
+<text x="55" y="62" class="title">도서 대여 데이터 모델</text><text x="55" y="92" class="sub">대여 한 건(loans)이 회원과 도서를 연결하는 사건 엔터티</text>
+<path class="line" d="M410 292 H540"/><path class="line" d="M1040 337 H910"/>
+<text x="414" y="276" class="label">1</text><text x="478" y="276" class="label">0..N</text><text x="437" y="319" class="note">member_id</text>
+<text x="1004" y="321" class="label">1</text><text x="923" y="321" class="label">0..N</text><text x="955" y="364" class="note">book_id</text>
+<g><rect x="60" y="160" width="350" height="340" rx="14" fill="#fff" stroke="#b9c9d9" stroke-width="2"/><path d="M60 174a14 14 0 0 1 14-14h322a14 14 0 0 1 14 14v46H60z" fill="#315a84"/><text x="84" y="199" class="head">members</text>
+<text x="84" y="259" class="field">id <tspan class="tag">PK · INTEGER IDENTITY</tspan></text><line x1="80" y1="276" x2="390" y2="276" stroke="#e3eaf1"/>
+<text x="84" y="315" class="field">name <tspan class="tag">VARCHAR(50) · NOT NULL</tspan></text><line x1="80" y1="332" x2="390" y2="332" stroke="#e3eaf1"/>
+<text x="84" y="371" class="field">email <tspan class="tag">VARCHAR(100) · NOT NULL</tspan></text><line x1="80" y1="388" x2="390" y2="388" stroke="#e3eaf1"/>
+<text x="84" y="427" class="field">joined_at <tspan class="tag">DATE · NOT NULL</tspan></text><text x="84" y="473" class="note">한 행 = 회원 한 명</text></g>
+<g><rect x="540" y="140" width="370" height="380" rx="14" fill="#fff" stroke="#b9c9d9" stroke-width="2"/><path d="M540 154a14 14 0 0 1 14-14h342a14 14 0 0 1 14 14v46H540z" fill="#256c68"/><text x="564" y="179" class="head">loans</text>
+<text x="564" y="239" class="field">id <tspan class="tag">PK · INTEGER IDENTITY</tspan></text><line x1="560" y1="256" x2="890" y2="256" stroke="#e3eaf1"/>
+<text x="564" y="284" class="field">member_id <tspan class="tag">FK · NOT NULL</tspan></text><line x1="560" y1="301" x2="890" y2="301" stroke="#e3eaf1"/>
+<text x="564" y="329" class="field">book_id <tspan class="tag">FK · NOT NULL</tspan></text><line x1="560" y1="346" x2="890" y2="346" stroke="#e3eaf1"/>
+<text x="564" y="374" class="field">borrowed_at <tspan class="tag">DATE · NOT NULL</tspan></text><line x1="560" y1="391" x2="890" y2="391" stroke="#e3eaf1"/>
+<text x="564" y="419" class="field">due_at <tspan class="tag">DATE · NOT NULL</tspan></text><line x1="560" y1="436" x2="890" y2="436" stroke="#e3eaf1"/>
+<text x="564" y="464" class="field">returned_at <tspan class="tag">DATE · NULL 허용</tspan></text><text x="564" y="500" class="note">한 행 = 대여 사건 한 건</text></g>
+<g><rect x="1040" y="160" width="350" height="340" rx="14" fill="#fff" stroke="#b9c9d9" stroke-width="2"/><path d="M1040 174a14 14 0 0 1 14-14h322a14 14 0 0 1 14 14v46h-350z" fill="#7656a3"/><text x="1064" y="199" class="head">books</text>
+<text x="1064" y="259" class="field">id <tspan class="tag">PK · INTEGER IDENTITY</tspan></text><line x1="1060" y1="276" x2="1370" y2="276" stroke="#e3eaf1"/>
+<text x="1064" y="315" class="field">title <tspan class="tag">VARCHAR(200) · NOT NULL</tspan></text><line x1="1060" y1="332" x2="1370" y2="332" stroke="#e3eaf1"/>
+<text x="1064" y="371" class="field">author <tspan class="tag">VARCHAR(100) · NOT NULL</tspan></text><line x1="1060" y1="388" x2="1370" y2="388" stroke="#e3eaf1"/>
+<text x="1064" y="427" class="field">published_year · isbn <tspan class="tag">NULL 허용</tspan></text><text x="1064" y="473" class="note">한 행 = 대여 대상 도서 한 건</text></g>
+<rect x="60" y="550" width="1330" height="58" rx="10" fill="#e9f0f7"/><text x="82" y="585" class="note">정책 메모: 회원 이메일은 UNIQUE 미확정 · ISBN은 NULL 허용, 고유성 미확정 · 동시에 같은 책을 빌리는 규칙은 후속 검토</text>
+</svg>
